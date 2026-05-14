@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+* {
+  box-sizing: border-box;
+}
+
+/* Light mode base */
+body {
+  background-color: #f5f3ff;
+  color: #1e1b4b;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode base */
+.dark body {
+  background-color: #0f0a2e;
+  color: #ffffff;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Smooth theme transitions on all elements */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
